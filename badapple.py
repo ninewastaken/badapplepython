@@ -5,8 +5,8 @@ import os
 from multiprocessing import Process
 import psutil
 
-global debug; debug = True
-global fps; fps = 70
+global debug; debug = False
+global fps; fps = 70 if debug != True else 110
 
 def music():
     #1
@@ -1102,7 +1102,7 @@ def video():
             frame = AsciiArt.from_image(f"C:\\Sinerva_Backup\\randompythonshit\\badapple\\frames\\{dir}\\{file}")
             frame.to_terminal()
             time.sleep(1/fps)
-            print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+            print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
         
 
 def badapple():
