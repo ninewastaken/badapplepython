@@ -3,9 +3,8 @@ import time
 from ascii_magic import AsciiArt
 import os
 from multiprocessing import Process
-import psutil
 
-global debug; debug = False
+global debug; debug = True
 global fps; fps = 70 if debug != True else 110
 
 def music():
@@ -1098,7 +1097,7 @@ def video():
     for dir in sorted(os.listdir(f"{os.path.dirname(os.path.abspath(__file__))}\\frames"), key=int):
         for file in os.listdir(f"{os.path.dirname(os.path.abspath(__file__))}\\frames\\{dir}"):
             if debug==True:
-                print(f"[DEBUG] FPS: {fps}, Frame: {int(file.replace("ezgif-frame-", "").replace(".png", ""))+(int(dir)*200)}, CPU Usage: {psutil.cpu_percent()}, RAM Usage: {psutil.virtual_memory().percent}")
+                print(f"[DEBUG] FPS: {fps}, Frame: {int(file.replace("ezgif-frame-", "").replace(".png", ""))+(int(dir)*200)}")
             frame = AsciiArt.from_image(f"{os.path.dirname(os.path.abspath(__file__))}\\frames\\{dir}\\{file}")
             frame.to_terminal()
             time.sleep(1/fps)
