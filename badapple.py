@@ -1095,11 +1095,11 @@ def music():
     #125
 
 def video():
-    for dir in sorted(os.listdir("C:\\Sinerva_Backup\\randompythonshit\\badapple\\frames"), key=int):
-        for file in os.listdir(f"C:\\Sinerva_Backup\\randompythonshit\\badapple\\frames\\{dir}"):
+    for dir in sorted(os.listdir(f"{os.path.dirname(os.path.abspath(__file__))}\\frames"), key=int):
+        for file in os.listdir(f"{os.path.dirname(os.path.abspath(__file__))}\\frames\\{dir}"):
             if debug==True:
                 print(f"[DEBUG] FPS: {fps}, Frame: {int(file.replace("ezgif-frame-", "").replace(".png", ""))+(int(dir)*200)}, CPU Usage: {psutil.cpu_percent()}, RAM Usage: {psutil.virtual_memory().percent}")
-            frame = AsciiArt.from_image(f"C:\\Sinerva_Backup\\randompythonshit\\badapple\\frames\\{dir}\\{file}")
+            frame = AsciiArt.from_image(f"{os.path.dirname(os.path.abspath(__file__))}\\frames\\{dir}\\{file}")
             frame.to_terminal()
             time.sleep(1/fps)
             print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
