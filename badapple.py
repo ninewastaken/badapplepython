@@ -5,7 +5,7 @@ import os
 from multiprocessing import Process
 
 global debug; debug = True
-global fps; fps = 70 if debug != True else 110
+global fps; fps = 70
 
 def music():
     #1
